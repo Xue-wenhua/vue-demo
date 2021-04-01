@@ -53,6 +53,9 @@ export default {
                     "word1": '@word()',
                     "word2": '@word(5)',
                     "word3": '@word(3,5)',
+                    "cparaprahph": '@cparagraph()',
+                    "csentence": '@csentence()',
+                    "cword": '@cword()',
                     "first": '@first()',
                     "last": '@last()',
                     "name1": '@name()',
@@ -63,8 +66,8 @@ export default {
                     "province": '@province()',
                     "city1": '@city()',
                     "city2": '@city(true)',
-                    "country1": '@country()',
-                    "country2": '@country(true)',
+                    "county1": '@county()',
+                    "county2": '@county(true)',
                     "mix": '@image("200x100", "@color", "#FFF","@word")'
                 }
             ]

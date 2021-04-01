@@ -22,7 +22,7 @@ export default {
             alert('wrong')
         })
         axios.get('/api/mock2').then(res => {
-            // console.log(res.data.datalist)
+            console.log(res.data.datalist)
             this.list = res.data.datalist.data.placeholder
         }).catch(res => {
             alert('wrong')
@@ -33,8 +33,13 @@ export default {
         axios.get('http://mock-kids.inner.youdao.com/mock/605c510caaa1c8002a39600b/example/api/mock4', {
             params: { name: 'xwh' }
         }).then(res => {
-            console.log(res)
+            // console.log(res)
         })
+        // axios.get('http://mock-kids.inner.youdao.com/mock/605c510caaa1c8002a39600b/example/api/mock5', {
+        //     params: { age: 18 }
+        // }).then(res => {
+        //     console.log(res)
+        // })
     }
 }
 </script>
