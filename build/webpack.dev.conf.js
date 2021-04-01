@@ -10,6 +10,14 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
 const portfinder = require('portfinder')
 
+//vue配置请求本地json数据
+const express = require('express')
+const app = express()
+const appData = require('../static/mocktest.json')
+const mock3 = appData.data
+const apiRoutes = express.Router()
+app.use('/api',apiRoutes)
+
 const HOST = process.env.HOST
 const PORT = process.env.PORT && Number(process.env.PORT)
 
@@ -42,6 +50,15 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     quiet: true, // necessary for FriendlyErrorsPlugin
     watchOptions: {
       poll: config.dev.poll,
+    },
+    //配置请求访问地址
+    before (app) {
+      app.get('/api/mock3',(req,res) => {
+        res.json({
+          error:0,
+          data: mock3
+        })
+      })
     }
   },
   plugins: [
